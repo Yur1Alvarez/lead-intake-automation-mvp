@@ -590,7 +590,7 @@
       <div class="contact-inner">
         <div class="contact-text">
           <h2>Ready to Get 40&ndash;60% More Booked Jobs?</h2>
-          <p>Fill out the form and we'll reach out within one business day to discuss your project. No pressure, no obligations &mdash; just a conversation about how we can help you grow.</p>
+          <p>Fill out the form and you'll get an instant confirmation email, then a personal follow-up to discuss your project. No pressure, no obligations &mdash; just a conversation about how we can help you grow.</p>
           <div class="contact-details">
             <div class="contact-item">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -615,6 +615,7 @@
         </div>
         <div class="contact-form-wrapper">
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/mwvnbnyp" method="POST">
+            <input type="hidden" name="source" value="localestimatepages.online">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" id="name" name="name" placeholder="John Smith" required>
@@ -629,13 +630,23 @@
             </div>
             <div class="form-row">
               <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" placeholder="Miami" required>
+              </div>
+              <div class="form-group">
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip" placeholder="33101" inputmode="numeric" pattern="[0-9]{5}(-[0-9]{4})?" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
                 <label for="business">Business Name</label>
                 <input type="text" id="business" name="business" placeholder="Smith's Roofing LLC">
               </div>
               <div class="form-group">
-                <label for="trade">Your Trade</label>
+                <label for="trade">Service Needed</label>
                 <select id="trade" name="trade" required>
-                  <option value="">Select your trade...</option>
+                  <option value="">Select a service...</option>
                   <option value="roofing">Roofing</option>
                   <option value="plumbing">Plumbing</option>
                   <option value="landscaping">Landscaping</option>
@@ -656,7 +667,7 @@
               Get My Free Demo Page
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </button>
-            <p class="form-note">We'll respond within 1 business day. No spam, ever.</p>
+            <p class="form-note">You'll get an instant confirmation email. No spam, ever.</p>
           </form>
         </div>
       </div>
