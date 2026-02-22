@@ -34,7 +34,7 @@ flowchart LR
 
 ## Form Payload Contract
 
-Current fields in `/Users/yurian/Codex/pages/index.html`:
+Current fields in `pages/index.html`:
 
 - `name` (required)
 - `email` (required)
@@ -94,15 +94,23 @@ Expected JSON object:
 - `summary`: max 200 chars
 - `next_action`: `call_now | text_now | send_quote | request_more_info | ignore`
 
-Prompt file: `/Users/yurian/Codex/docs/ai-triage-prompt.md`
+Prompt file: `docs/ai-triage-prompt.md`
 
 ## Build Docs (Click-by-click)
 
-- Zap setup: `/Users/yurian/Codex/docs/zapier-build.md`
-- Email templates: `/Users/yurian/Codex/docs/email-templates.md`
-- Test + acceptance checklist: `/Users/yurian/Codex/docs/test-plan.md`
-- Demo recording script (2-3 mins): `/Users/yurian/Codex/docs/demo-script.md`
-- Sheet starter CSV: `/Users/yurian/Codex/docs/google-sheet-template.csv`
+- Final verified workflow (current live logic): `docs/zap1-final-workflow.md`
+- Zap setup: `docs/zapier-build.md`
+- Email templates: `docs/email-templates.md`
+- Test + acceptance checklist: `docs/test-plan.md`
+- Demo recording script (2-3 mins): `docs/demo-script.md`
+- Sheet starter CSV: `docs/google-sheet-template.csv`
+
+## Current Verified Routing Logic
+
+- Primary route split: `is_duplicate_24h` (not urgency)
+  - Path A: new leads (`false`) -> auto-reply + `status=responded`
+  - Path B: duplicate leads (`true`) -> `status=duplicate_24h` (no customer immediate reply)
+- Secondary escalation: `ai_urgency == high` triggers internal alert inside each path
 
 ## Portfolio Deliverables Checklist
 
@@ -112,7 +120,7 @@ Prompt file: `/Users/yurian/Codex/docs/ai-triage-prompt.md`
 - [ ] Follow-up chain tested
 - [ ] Error alert tested
 - [ ] Demo video recorded
-- [ ] Screenshots added under `/Users/yurian/Codex/docs/screenshots/`
+- [ ] Screenshots added under `docs/screenshots/`
 
 ## Security and Data Hygiene
 
@@ -122,8 +130,8 @@ Prompt file: `/Users/yurian/Codex/docs/ai-triage-prompt.md`
 
 ## Local Website
 
-Static files are in `/Users/yurian/Codex/pages/`.
+Static files are in `pages/`.
 
-- Main page: `/Users/yurian/Codex/pages/index.html`
-- Styles: `/Users/yurian/Codex/pages/styles.css`
-- Config: `/Users/yurian/Codex/pages/vercel.json`
+- Main page: `pages/index.html`
+- Styles: `pages/styles.css`
+- Config: `pages/vercel.json`
